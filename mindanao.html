@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="download (1).png" type="image/png">
+    <title>Traverse</title>
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+       }
+       body, html {
+        height: 100%;
+       }
+       .banner {
+        width: 100%;
+        height: 500vh;
+        background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://www.luxuriousmagazine.com/wp-content/uploads/2020/08/Pavilions-El-Nido-Palawan-Island-aerial-photo.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+       }
+       .navbar {
+        width: 85%;
+        margin: auto;
+        padding: 35px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       }
+       .logo {
+        width: 200px;
+        cursor: pointer;
+       }
+       .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+       }
+       .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+       }
+       .navbar ul li::after {
+        content: '';
+        height: 3px;
+        width: 0;
+        background: #009688;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+       }
+       .navbar ul li:hover:after {
+        width: 100%;
+       }
+ 
+       .row {
+  display: flex;
+  width: 100%;
+}
+ 
+.columna {
+  width: 35%;
+}
+.columna h1 {
+  font-size: 25px;
+  color: #fff;
+  padding-left: 80px;
+}
+.columna h2 {
+  margin-left: 30px;
+  font-size: 25px;
+  color: #fff;
+}
+.columna p {
+    text-indent: 50px;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+}
+.columnc .cardc h1 {
+  font-size: 25px;
+  color: #fff;
+  padding-left: 80px;
+}
+.columnc .carde h1 {
+  font-size: 25px;
+  padding-bottom: 20px;
+  color: #fff;
+}
+.columnc h2 {
+    margin-bottom: 20px;
+    margin-left: 30px;
+  font-size: 25px;
+  color: #fff;
+}
+.columnc p {
+    text-indent: 50px;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+}
+.columnb {
+  width:  15%;
+}
+.columnc {
+  width: 35%;
+}
+.columnd {
+  width: 15%;
+}
+.wrappera {
+ 
+  width: 100%;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+.wrapperb {
+ 
+  width: 70%;
+  margin-top: 50px;
+}
+.wrapperc {
+ 
+    width: 100%;
+  margin-right: 50px;
+  margin-top: 20px;
+ 
+}
+.wrapperd {
+ 
+  width: 70%;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+.carda {
+  margin-left: 30px;
+  margin-bottom: 20px;
+  width: 400px;
+  height: 460px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+ 
+}
+.cardb {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  width: 150px;
+  height: 180px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+ 
+}
+.cardc {
+    margin-left: 30px;
+  margin-bottom: 20px;
+  width: 400px;
+  height: 460px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+ 
+}
+.cardd {
+    margin-left: 10px;
+  margin-bottom: 20px;
+  width: 150px;
+  height: 180px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+}
+.carde {
+  margin-top: 30px;
+    margin-left: 100px;
+  margin-bottom: 20px;
+  width: 400px;
+  height: 280px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+}
+.carda:hover {
+  transform: translateY(20px);
+}
+.carda::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.carda:hover:before {
+  opacity: 1;
+}
+.carda img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.carda .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.carda:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.carda .info h1 {
+  margin: 0;
+}
+.carda .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.carda .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.carda .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+.cardb:hover {
+  transform: translateY(20px);
+}
+.cardb::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.cardb:hover:before {
+  opacity: 1;
+}
+.cardb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cardb .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.cardb:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.cardb .info h1 {
+  font-size: 25px;
+  margin: 0;
+}
+.cardb .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.cardb .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.cardb .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+ 
+.cardc:hover {
+  transform: translateY(20px);
+}
+.cardc::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.cardc:hover:before {
+  opacity: 1;
+}
+.cardc img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cardc .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.cardc:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.cardc .info h1 {
+  margin: 0;
+}
+.cardc .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.cardc .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.cardc .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+.cardd:hover {
+  transform: translateY(20px);
+}
+.cardd::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.cardd:hover:before {
+  opacity: 1;
+}
+.cardd img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cardd .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.cardd:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.cardd .info h1 {
+  font-size: 25px;
+  margin: 0;
+}
+.cardd .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.cardd .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.cardd .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+.carde:hover {
+  transform: translateY(20px);
+}
+.carde::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.carde:hover:before {
+  opacity: 1;
+}
+.carde img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.carde .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.carde:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.carde .info h1 {
+  margin: 0;
+}
+.carde .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.carde .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.carde .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+.min {
+    margin: 20px;
+}
+.min h2 {
+    color: #f5f5f5;
+    font-size: 25px;
+}
+.min h1 {
+    color: #f5f5f5;
+    font-size: 50px;
+}
+ 
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="web.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    
+    <div class="min">
+    <h2>Let's go to</h2>
+    <h1>Mindanao</h1>
+   
+</div>
+    <div class="row">
+      <div class="columna">
+        <p style="text-align: justify;">Mindanao, the southernmost island of the Philippines, beckons with its rich cultural heritage, stunning landscapes, and warm hospitality. From pristine beaches to majestic mountains, Mindanao offers a diverse and captivating experience that will leave you in awe and inspire a deep appreciation for this enchanting region.</p>
+        <br>
+        <br>
+        
+        <h2>Siargao Island</h2>
+        <div class="wrappera">
+            <div class="carda">
+              <img src="https://media.istockphoto.com/photos/tropical-guyam-island-with-traditional-fishing-boats-siargao-picture-id860794652?k=6&m=860794652&s=170667a&w=0&h=HMqUpBQ_gPPNGU_qEokTRJVmoyS1jMfFMHOyTeAFTjk=">
+              <div class="info">
+                <h1>Siargao Island</h1>
+                <p>Philippines: Siargao</p>
+              </div>
+            </div>
+           
+            <p>
+                Siargao Island is a popular tourist destination located in the province of Surigao del Norte in the Philippines. Known as the "Surfing Capital of the Philippines," Siargao has gained international recognition for its world-class surfing waves, pristine beaches, and laid-back island atmosphere.</p>
+                <p>Surrounded by turquoise waters of the Philippine Sea, Siargao is characterized by its pristine white sandy beaches, palm-fringed coastlines, and lush green landscapes. The island boasts a rich ecosystem with dense mangrove forests, coconut groves, and vibrant coral reefs.</p>
+                <h2>Sta. Cruz Pink Island</h2>
+            <div class="carda">
+              <img src="https://images.summitmedia-digital.com/preview/images/2017/02/03/1-mizturr_t.jpg">
+              <div class="info">
+                <h1>Sta. Cruz Pink Island</h1>
+                <p>Philippines: Zamboanga</p>
+              </div>
+            </div>
+               <p>Santa Cruz Island Pink Beach is a mesmerizing destination known for its stunning pink sand shoreline. The beach's distinctive pink hue comes from the mixture of white sand and crushed fragments of red organ pipe coral that have been naturally eroded over time.</p>
+ 
+                <p> The pink sand, along with the crystal-clear turquoise waters of the Sulu Sea, creates a picturesque and captivating setting. Visitors to Santa Cruz Island Pink Beach can enjoy swimming, snorkeling, sunbathing, and picnicking on the soft pink sands. The beach is also surrounded by vibrant coral reefs, making it a popular spot for snorkelers and divers to explore the marine life.</p>
+                <h2>Tinago Falls</h2>
+            <div class="carda">
+              <img src="https://th.bing.com/th/id/R.ef3d0ad0a617ee44fd00f4ecba4ac955?rik=pGZNBvsiJEd%2f5g&riu=http%3a%2f%2fwww.traveltothephilippines.info%2fwp-content%2fuploads%2f2019%2f11%2fLanao-del-Norte-Tinago-Falls3.jpg&ehk=ZkNjnSOesqFted7V66XjF2SCwattEDP6Lk5exGd2FZk%3d&risl=&pid=ImgRaw&r=0">
+              <div class="info">
+                <h1>Tinago Falls</h1>
+                <p>Philippines: Lanao Del Norte</p>
+              </div>
+            </div>
+            <p>Tinago Falls is a breathtaking natural wonder located in the province of Iligan, Philippines. It is hailed as one of the most magnificent waterfalls in the country and is a popular destination for nature enthusiasts and adventure seekers alike.
+ 
+The name "Tinago" translates to "hidden" in the local language, and it aptly describes the falls as it is tucked away in a deep ravine amidst lush greenery. To reach the falls, visitors must embark on a short but thrilling trek through a dense forest, which adds an element of excitement to the overall experience.</p><p>Tinago Falls is undoubtedly a hidden gem in the Philippines, showcasing the country's natural beauty in all its splendor. Whether you seek adventure, tranquility, or simply a breathtaking sight, Tinago Falls is a must-visit destination that will leave you with lasting memories of its captivating charm.
+</p>
+          </div>
+      </div>
+      <div class="columnb">
+        <div class="wrapperb">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+         
+         
+          
+          
+          <div class="cardb">
+            <img src="https://wallpapercave.com/wp/wp3924909.jpg">
+            <div class="info">
+              <h1>Siargao Island</h1>
+              <p>Siargao</p>
+            
+            </div>
+          </div>
+ 
+          <div class="cardb">
+            <img src="https://gttp.imgix.net/226390/x/0/siargao-island-hopping-and-sohoton-cove-day-tour-with-transfers-2.jpg">
+            <div class="info">
+                <h1>Siargao Island</h1>
+                <p>Siargao</p>
+         
+            </div>
+          </div>
+ 
+          <div class="cardb">
+            <img src="https://www.journeyera.com/wp-content/uploads/2018/01/siargao-island-pictures-photo-gallery-0315.jpg">
+            <div class="info">
+                <h1>Siargao Island</h1>
+                <p>Siargao</p>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          
+          <div class="cardb">
+            <img src="https://th.bing.com/th/id/R.db2fd71a4a03d86a8496cecd70815574?rik=%2ftyLwOa4YBVgHQ&riu=http%3a%2f%2fwww.traveltourxp.com%2fwp-content%2fuploads%2f2016%2f10%2fGreat-Santa-Cruz-Island-Pink-Beach-Philippines.jpg&ehk=%2bPFBlpaF1iglPgc1l2oD3Grgn%2bo03Cpn85hLN%2fETQbI%3d&risl=&pid=ImgRaw&r=0">
+            <div class="info">
+              <h1>Pink Island</h1>
+              <p>Philippines: Zamboanga</p>
+        
+            </div>
+          </div>
+ 
+          <div class="cardb">
+            <img src="https://i.pinimg.com/originals/42/56/ff/4256ff3ee4d61618facd55d27422f202.jpg">
+            <div class="info">
+                <h1>Pink Island</h1>
+                <p>Philippines: Zamboanga</p>
+          
+            </div>
+          </div>
+ 
+          <div class="cardb">
+            <img src="https://primer.com.ph/blog/wp-content/uploads/sites/14/2016/12/Pink-Sand-Beach-of-Sta-Cruz-Island.jpeg">
+            <div class="info">
+                <h1>Pink Island</h1>
+                <p>Philippines: Zamboanga</p>
+          
+            </div>
+          </div>
+       
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          
+ 
+          <div class="cardb">
+            <img src="https://i.pinimg.com/originals/54/f9/b7/54f9b714e375f2f453418672a2ef79b2.jpg">
+            <div class="info">
+                <h1>Tinago Falls</h1>
+                <p>Philippines: Lanao Del Norte</p>
+            </div>
+          </div>
+ 
+          <div class="cardb">
+            <img src="https://1.bp.blogspot.com/-WM3OHfrlQyI/XxQpz7WEAzI/AAAAAAAAzDk/dLLj1BgI-5QFW5Waj7EKjoR8LM4DQpAfQCLcBGAsYHQ/s1600/Tinago%2BFalls_Iligan%2BCity.JPG">
+            <div class="info">
+                <h1>Tinago Falls</h1>
+                <p>Philippines: Lanao Del Norte</p>
+            </div>
+          </div>
+          <div class="cardb">
+            <img src="https://1.bp.blogspot.com/-c4iZ1TQ5heY/UT8mNVBHfGI/AAAAAAAAfm8/2sQg0fwCY3U/s1600/4523788706_643801c970_b.jpg">
+            <div class="info">
+                <h1>Tinago Falls</h1>
+                <p>Philippines: Lanao Del Norte</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columnc">
+        <div class="wrapperc">
+            <br>
+            <br>
+          
+       
+            <h2>Hinatuan Enchanted River</h2>
+          <div class="cardc">
+            <img src="https://ecophiles.com/wp-content/uploads/2017/07/35171817502_461540e973_o.jpg?189db0">
+            <div class="info">
+              <h1>Hinatuan Enchanted River</h1>
+              <p>Philippines: Surigao</p>
+            </div>
+          </div>
+           <P>The Hinatuan Enchanted River is a breathtaking natural wonder located in Surigao del Sur, Philippines. It is renowned for its crystal-clear azure waters that seem to radiate an otherworldly beauty. The river's name, "enchanted," perfectly captures the mystical atmosphere that surrounds it.</P>
+           <p>As you approach the river, you'll be captivated by the vibrant hues of blue that stretch out before you. The water is so translucent that you can see the riverbed, giving an illusion of floating above a hidden underwater paradise. It's a sight that leaves visitors in awe and wonder.</p>
+           <h2>Aliwagwag Falls</h2>
+          <div class="cardc">
+            <img src="https://i1.wp.com/roxannelacap.com/wp-content/uploads/2018/05/Aliwagwag-Falls.jpg?resize=1080%2C1350">
+            <div class="info">
+              <h1>Aliwagwag Falls</h1>
+              <p>Philippines: Davao</p>
+              
+            </div>
+          </div>
+           <p>Aliwagwag Falls is a captivating natural wonder nestled in the province of Davao Oriental, Philippines. It is hailed as one of the most beautiful waterfalls in the country, known for its unique cascading tiers and lush surroundings.</p>
+ 
+           <p> What sets Aliwagwag Falls apart is its grand staircase-like formation. Instead of a single drop, the falls boast a series of 84 cascades, each with varying heights and widths. As the water descends from one tier to another, it creates a mesmerizing spectacle of rushing white water against a backdrop of green foliage.
+            
+            The sheer size and grandeur of Aliwagwag Falls are truly awe-inspiring. With a total height of around 340 meters (1,115 feet), it is often compared to a towering stairway to heaven. The view from the base of the falls is particularly breathtaking, allowing visitors to witness the majestic display of nature's power.</p>
+            <br>
+            <br>
+            <br>
+            <h3 style="font-size: 25px; color: #f5f5f5; margin-left: 30PX;">Discover More:</h3>
+            <div class="carde">
+              <img src="https://preview.redd.it/s1guz02t3foz.jpg?auto=webp&s=dd63f9ed9b1a30f341d612f239a271d62b199087">
+              <div class="info">
+                <h1>Luzon</h1>
+                <a href="luzon.html" class="button">Read More</a>
+              </div>
+            </div>
+            <div class="carde">
+              <img src="https://2.bp.blogspot.com/-NE7XHW1fIYM/UCDgCKZ8SxI/AAAAAAAABrI/lVbO8w36EOM/s1600/boracay+resorts.jpg">
+              <div class="info">
+                <h1>Visayas</h1>
+                <a href="visayas.html" class="button">Read More</a>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="columnd">
+        <div class="wrapperd">
+           
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          <div class="cardd">
+            <img src="https://1.bp.blogspot.com/-a1pk-rqBwbk/VViuLqTKCdI/AAAAAAAARPU/3P4Jgp4SsIA/s640/safe%2Bplaces%2Bin%2BMindanao%2Benchanted%2Briver.jpg">
+            <div class="info">
+                <h1>Hinatuan Enchanted River</h1>
+                <p>Philippines: Surigao</p>
+            </div>
+          </div>
+ 
+          <div class="cardd">
+            <img src="https://th.bing.com/th/id/OIP.Mx6fRjaRuUW4voNPvrWwSAHaJQ?w=136&h=180&c=7&r=0&o=5&pid=1.7">
+            <div class="info">
+                <h1>Hinatuan Enchanted River</h1>
+                <p>Philippines: Surigao</p>
+            </div>
+          </div>
+ 
+          <div class="cardd">
+            <img src="https://th.bing.com/th/id/OIP.UjeFJM82zSA12g4dAKRQRgHaFj?w=236&h=180&c=7&r=0&o=5&pid=1.7">
+            <div class="info">
+                <h1>Hinatuan Enchanted River</h1>
+                <p>Philippines: Surigao</p>
+            </div>
+          </div>
+          
+      
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="cardd">
+            <img src="https://www.traveltothephilippines.info/wp-content/uploads/2019/03/Davao-Oriental7-300x300.jpg">
+            <div class="info">
+                <h1>Aliwagwag Falls</h1>
+                <p>Philippines: Davao</p>
+                
+            </div>
+          </div>
+ 
+          <div class="cardd">
+            <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001836261591/Aliwagwag%2520Falls%2520-%25201-Day%2520Tour%2520-1374fd55-9a3f-42dc-8242-431534d30626.jpeg?_src=imagekit&tr=dpr-3">
+            <div class="info">
+                <h1>Aliwagwag Falls</h1>
+                <p>Philippines: Davao</p>
+                
+            </div>
+          </div>
+ 
+          <div class="cardd">
+            <img src="https://vismin.ph/wp-content/uploads/2020/11/Aliwagwag-Falls-Davao-Earl-Kristianne-Villamor.jpg?x78620">
+            <div class="info">
+                <h1>Aliwagwag Falls</h1>
+              <p>Philippines: Davao</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,610 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="download (1).png" type="image/png">
+    <title>Traverse</title>
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+       }
+       body, html {
+        height: 100%;
+       }
+       .banner {
+        width: 100%;
+        height: 340vh;
+        background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://www.luxuriousmagazine.com/wp-content/uploads/2020/08/Pavilions-El-Nido-Palawan-Island-aerial-photo.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+       }
+       .navbar {
+        width: 85%;
+        margin: auto;
+        padding: 35px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       }
+       .logo {
+        width: 200px;
+        cursor: pointer;
+       }
+       .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+       }
+       .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+       }
+       .navbar ul li::after {
+        content: '';
+        height: 3px;
+        width: 0;
+        background: #009688;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+       }
+       .navbar ul li:hover:after {
+        width: 100%;
+       }
+     .content {
+        display: flex;
+     }
+     .columna {
+        width: 35%;
+        padding-left: 40px;
+     }
+     .columna h2 {
+        font-size: 25px;
+        color: #f5f5f5;
+     }
+     .columna p {
+        font-size: 15px;
+        text-indent: 40px;
+        color: #f5f5f5;
+        text-align: justify;
+     }
+     .columna img {
+        margin: 10px;
+        height: 300px;
+     }
+     .columnb {
+        width: 65%;
+     }
+     * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #008000, #00e600, #b3ffb3, #00e600, #008000);
+  font-family: 'Martel Sans', sans-serif;
+}
+ 
+.columnb h1 {
+  font-size: 5.25vmin;
+  text-align: center;
+  color: white;
+}
+.columnb p {
+  font-size: max(10pt, 2.5vmin);
+  line-height: 1.4;
+  color: #0e390e;
+  margin-bottom: 1.5rem;
+}
+.wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 85vmin;
+  height: 300px;
+  border: 3px solid;
+  margin: 2rem auto;
+  transition: .3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 1rem .75rem;
+  background: #b2c7dd7e;
+  transition: .4s ease-in-out;
+  z-index: 1;
+}
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 15vmin;
+  height: 100%;
+  padding: .5rem 0 0 .5rem;
+  border: 3px solid;
+  border-image: 
+      linear-gradient(
+        to bottom, 
+        #3af0c2 5%,
+        rgb(233, 252, 233) 35% 65%,
+        #3ba1e6 95%
+      ) 0 0 0 100%;
+  transition: .3s ease-in-out .2s;
+  z-index: 1;
+}
+.image-content1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  background-image: url("https://getwallpapers.com/wallpaper/full/c/3/d/1193846-philippines-desktop-wallpaper-1920x1080-for-iphone-6.jpg");
+  background-size: cover;
+  transition: .3s ease-in-out;
+ 
+}
+.image-content2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  background-image: url("https://th.bing.com/th/id/R.f3148dfd691773901be3e489c404a23c?rik=W%2fsmM6D8YWcyBQ&riu=http%3a%2f%2fmedia.zenfs.com%2fen-PH%2fblogs%2finbox%2fCagsawa-ruins-with-Mayon-Volcano-at-the-background.-From-flickr..jpg&ehk=kc897OxggsX5ixwmQpveaePIhF%2bvI5t9Vvo6BKsIjPk%3d&risl=&pid=ImgRaw&r=0");
+  background-size: cover;
+  transition: .3s ease-in-out;
+  
+}
+.image-content3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  background-image: url("https://cdn.theculturetrip.com/wp-content/uploads/2018/02/shutterstock_634025597.jpg");
+  background-size: cover;
+  transition: .3s ease-in-out;
+  
+}
+.image-content4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  background-image: url("https://www.philippinesretreats.com/wp-content/uploads/2021/04/4-Puerto-Princesa-Subterranean-River-National-Park.jpg");
+  background-size: cover;
+  transition: .3s ease-in-out;
+  
+}
+.image-content5 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  background-image: url("https://theworldtravelguy.com/wp-content/uploads/2020/02/DJI_0195.jpg");
+  background-size: cover;
+  transition: .3s ease-in-out;
+
+}
+.image-content6 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  background-image: url("https://lemiapp.com/api/v3/fullsize?url=https://lemi.travel/uploads/picture-1581578945957.jpg");
+  background-size: cover;
+  transition: .3s ease-in-out;
+ 
+}
+ 
+.dots {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 55px;
+  height: 4vmin;
+  transition: .3s ease-in-out .3s;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  background: yellow;
+  border: 1px solid indigo;
+  border-radius: 50%;
+  transition: .3s ease-in-out .3s;
+}
+ 
+.text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vmin;
+  height: 100%;
+  padding: 3vmin 4vmin;
+  background: #fff;
+  box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / .4);
+  overflow-y: scroll;
+}
+ 
+.wrap:hover .overlay
+ {
+  transform: translateX(-60vmin);
+}
+.wrap:hover .image-content {
+  width: 30vmin;
+}
+.wrap:hover .overlay-content {
+  border: none;
+  transition-delay: .2s;
+  transform: translateX(60vmin);
+}
+.wrap:hover .dots {
+  transform: translateX(1rem);
+}
+.wrap:hover .dots .dot {
+  background: white;
+}
+
+.animate {
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+  animation-fill-mode: backwards;
+}
+
+.pop { animation-name: pop; }
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+ 
+
+.slide { animation-name: slide; }
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translate(4em, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+ 
+.slide-left { animation-name: slide-left; }
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translate(-40px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+ 
+.slide-up {animation-name: slide-up;}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(3em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+.delay-1 {
+  animation-delay: 0.3s;
+}
+.delay-2 {
+  animation-delay: 0.6s;
+}
+.delay-3 {
+  animation-delay: 0.9s;
+}
+.delay-4 {
+  animation-delay: 1.2s;
+}
+.delay-5 {
+  animation-delay: 1.5s;
+}
+.delay-6 {
+  animation-delay: 1.8s;
+}
+.delay-7 {
+  animation-delay: 2.1s;
+}
+.delay-8 {
+  animation-delay: 2.4s;
+}
+.wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+}
+.card {
+  margin-left: 10px;
+  width: 300px;
+  height: 360px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+ 
+}
+.card:hover {
+  transform: translateY(20px);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.card:hover:before {
+  opacity: 1;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: -10px;
+  left: -10PX;
+}
+.card .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.card .info h1 {
+  margin: 0;
+}
+.card .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.card .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.card .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="web.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+      <div class="content">
+        <div class="columna">
+            <h2>Travel the beautiful places in</h2><h1 style="font-size: 50px; color: #f5f5f5;">Luzon</h1>
+            <img src="https://th.bing.com/th/id/R.70cb80b24a664bce63a49ec9d0a19185?rik=2roAhkzJzJVrow&riu=http%3a%2f%2fnatccoglobalfilipinos.natcco.coop%2fwp-content%2fuploads%2f2018%2f05%2fluzon.png&ehk=0fUwnIONHN1c8cVFJxrLFQ%2feOw9VMDm2UNDuowAK%2bDI%3d&risl=&pid=ImgRaw&r=0">
+            <p>Welcome to Luzon, the largest and most populous island in the Philippines, which is teeming with diverse attractions and breathtaking landscapes. From vibrant cities to stunning natural wonders, Luzon offers an unforgettable travel experience for all types of adventurers.</p>
+                <br>
+                <img src="https://dbijapkm3o6fj.cloudfront.net/resources/12839,1004,1,6,4,0,600,450/-4601-/20170307202351/experiences.jpeg">
+               <p> Begin your journey in the bustling capital city of Manila, where the past and present coexist harmoniously. Explore the historic walled city of Intramuros, with its cobblestone streets, ancient churches, and Spanish colonial architecture. Immerse yourself in Filipino culture by visiting the National Museum, where you can marvel at the country's rich heritage and art collections.</p>
+                <br>
+               <p>   For nature enthusiasts, Luzon boasts some of the most breathtaking landscapes in the Philippines. Embark on an adventure to the iconic Banaue Rice Terraces, a UNESCO World Heritage site, and be amazed by the intricate terraced fields carved into the mountainside by ancient indigenous tribes. Continue your journey to the picturesque Taal Lake and witness the beauty of the Taal Volcano, a volcano within a lake, offering panoramic views and thrilling hiking opportunities.</p>
+                <br>
+               <p>  If you're seeking pristine beaches and crystal-clear waters, head to the province of Palawan. Discover the awe-inspiring Underground River, a navigable river flowing through a mesmerizing cave system, and be captivated by its enchanting beauty. Visit the stunning El Nido and Coron, where you can island-hop, snorkel in vibrant coral reefs, and relax on white sand beaches, surrounded by towering limestone cliffs.</p>
+                <br>
+               <p>   Luzon is also home to the majestic Mount Mayon, known for its perfect cone shape and frequent volcanic activity. Hike to its summit for panoramic views of the surrounding landscapes and witness the raw power of nature.</p>
+                <br>
+               <p>  Whether you're seeking history, culture, adventure, or relaxation, Luzon has it all. Explore the diverse attractions and create memories that will last a lifetime in this captivating island in the Philippines.</p>
+               <br>
+               <br>
+               <br>
+               <br>
+            <br>
+            <h3 style="font-size: 30px; color: #f5f5f5;">Discover More:</h3>
+            <div class="wrapper">
+             
+    
+              <div class="card">
+                <img src="https://2.bp.blogspot.com/-NE7XHW1fIYM/UCDgCKZ8SxI/AAAAAAAABrI/lVbO8w36EOM/s1600/boracay+resorts.jpg" >
+                <div class="info">
+                  <h1>Visayas</h1>
+                  <p>Philippines</p>
+                  <a href="visayas.html" class="button">Read More</a>
+                </div>
+              </div>
+    
+              <div class="card">
+                <img src="https://i.pinimg.com/736x/a5/7b/c8/a57bc8c23da04c23f715fc488e2218a1.jpg" >
+                <div class="info">
+                  <h1>Mindanao</h1>
+                  <p>Philippines</p>
+                  <a href="mindanao.html" class="button">Read More</a>
+                </div>
+              </div>
+            </div>
+        </div>
+ 
+       
+        <div class="columnb">
+            <div class="wrap animate pop">
+                <div class="overlay">
+                    <div class="overlay-content animate slide-left delay-2">
+                        <h1 class="animate slide-left pop delay-4">Taal Lake</h1>
+                        <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Philippines: <em>Batangas</em></p>
+                    </div>
+                    <div class="image-content1 animate slide delay-5"></div>
+                            <div class="dots animate">
+                                <div class="dot animate slide-up delay-6"></div>
+                                <div class="dot animate slide-up delay-7"></div>
+                                <div class="dot animate slide-up delay-8"></div>
+                            </div>
+                </div>
+                    <div class="text">
+                        <p>Taal Lake, located in the province of Batangas in the Philippines, is a captivating natural wonder that draws visitors from far and wide. Nestled within a caldera formed by an ancient volcanic eruption, the lake boasts stunning scenery that leaves a lasting impression. The centerpiece of Taal Lake is Volcano Island, an active volcano rising majestically from the center of the lake. The sight of the volcano, surrounded by the serene waters of the lake and lush greenery, creates a mesmerizing view that captures the hearts of all who visit.</p>
+                        <p>Aside from its scenic beauty, Taal Lake offers a range of activities for visitors to enjoy. Boat rides allow tourists to explore the lake and get a closer look at the volcanic island, providing a thrilling and memorable experience. Adventurous souls can hike up the volcano and be rewarded with panoramic views of the surrounding landscapes. The area is also rich in biodiversity, making it a haven for nature enthusiasts. From the unique tawilis fish found only in this lake to the diverse bird species in the surrounding forests, Taal Lake offers a chance to connect with nature and witness its wonders firsthand.</p>
+                    </div>
+            </div>
+            <div class="wrap animate pop">
+                <div class="overlay">
+                    <div class="overlay-content animate slide-left delay-2">
+                        <h1 class="animate slide-left pop delay-4">Mayon Volcano</h1>
+                        <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Philippines: <em>Albay</em></p>
+                    </div>
+                    <div class="image-content2 animate slide delay-5"></div>
+                            <div class="dots animate">
+                                <div class="dot animate slide-up delay-6"></div>
+                                <div class="dot animate slide-up delay-7"></div>
+                                <div class="dot animate slide-up delay-8"></div>
+                            </div>
+                </div>
+                    <div class="text">
+                        <p>Mount Mayon, located in the province of Albay in the Philippines, is an iconic and breathtaking stratovolcano that attracts visitors from all over the world. Known for its near-perfect cone shape, Mount Mayon stands as a majestic centerpiece against the Albay landscape. Rising to a height of approximately 2,462 meters (8,077 feet), it is renowned as one of the most active volcanoes in the Philippines.</p>
+                        <p>The beauty of Mount Mayon lies in its symmetrical form, characterized by smooth slopes that are often covered in lush vegetation. The volcano's scenic allure, combined with its periodic eruptions, creates a unique juxtaposition of danger and beauty. As visitors approach the volcano, they can witness the contrast between the verdant surrounding landscapes and the hardened lava flows that mark the volcano's volatile history. The sight of Mount Mayon, especially during periods of volcanic activity when its summit emits ash plumes and molten lava flows, is both awe-inspiring and humbling.</p>
+                        <p>Mount Mayon offers a range of outdoor activities for adventurous souls. Hiking enthusiasts can embark on a journey to conquer its slopes, with several trails catering to different levels of experience. The climb to the summit provides panoramic views of the surrounding countryside and the nearby Gulf of Albay, offering a reward for the efforts exerted. Additionally, the volcano's proximity to natural parks and reserves presents opportunities for eco-tourism and wildlife observation, further enhancing the allure of Mount Mayon as a destination.</p>
+                    </div>
+            </div>
+            <div class="wrap animate pop">
+                <div class="overlay">
+                    <div class="overlay-content animate slide-left delay-2">
+                        <h1 class="animate slide-left pop delay-4">Banaue Rice Terraces</h1>
+                        <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Philippines: <em>Ifugao</em></p>
+                    </div>
+                    <div class="image-content3 animate slide delay-5"></div>
+                            <div class="dots animate">
+                                <div class="dot animate slide-up delay-6"></div>
+                                <div class="dot animate slide-up delay-7"></div>
+                                <div class="dot animate slide-up delay-8"></div>
+                            </div>
+                        </div>
+                            <div class="text">
+                                <p>The Banaue Rice Terraces, located in the Ifugao province of the Philippines, are a remarkable UNESCO World Heritage site and a testament to the ingenuity and agricultural practices of the indigenous people of the region. Carved into the mountainside by hand over 2,000 years ago, these terraces are an engineering marvel and an awe-inspiring example of sustainable farming techniques. The terraces stretch across the slopes of the Cordillera mountain range, covering approximately 10,360 square kilometers (4,000 square miles) of land.</p>
+                                <p>The Banaue Rice Terraces are renowned for their stunning beauty and cultural significance. The terraces, often referred to as the "Eighth Wonder of the World," resemble giant steps that cascade down the mountainside, creating a breathtaking panorama. Each terrace is carefully built and maintained to utilize the natural water resources and optimize rice cultivation, enabling the Ifugao people to grow rice in the mountainous terrain. The terraces are not only a means of sustenance but also a reflection of the cultural heritage and traditions of the Ifugao community, representing their harmonious relationship with the environment.</p>
+                                <p>Visiting the Banaue Rice Terraces allows travelers to immerse themselves in the rich history and cultural heritage of the Ifugao people. Trekking through the terraces offers an opportunity to witness the traditional farming methods still practiced by the locals and gain insight into their way of life. The surrounding landscape is also adorned with picturesque villages, traditional huts, and vibrant rice paddies, providing a scenic backdrop for exploration and photography. Overall, a visit to the Banaue Rice Terraces is a journey into a world where nature, culture, and human ingenuity come together to create a truly remarkable and awe-inspiring destination.</p>
+                            </div>
+                    </div>
+                    <div class="wrap animate pop">
+                        <div class="overlay">
+                            <div class="overlay-content animate slide-left delay-2">
+                                <h1 class="animate slide-left pop delay-4">Palawan Underground River</h1>
+                                <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Philippines: <em>Palawan</em></p>
+                            </div>
+                            <div class="image-content4 animate slide delay-5"></div>
+                                    <div class="dots animate">
+                                        <div class="dot animate slide-up delay-6"></div>
+                                        <div class="dot animate slide-up delay-7"></div>
+                                        <div class="dot animate slide-up delay-8"></div>
+                                    </div>
+                        </div>
+                            <div class="text">
+                                <p>The Underground River in Palawan, Philippines, is a natural wonder and a designated UNESCO World Heritage site. Located in the Puerto Princesa Subterranean River National Park, it is one of the longest navigable underground rivers in the world, stretching for approximately 8.2 kilometers (5 miles) through a stunning limestone cave system. The river flows directly into the South China Sea, offering visitors a unique and awe-inspiring experience.</p>
+                                <p>Exploring the Underground River is a fascinating adventure that takes visitors into a mystical realm of natural beauty. A guided boat tour allows you to glide along the crystal-clear waters, passing through the vast chambers of the cave adorned with spectacular rock formations, stalactites, and stalagmites. As you venture deeper into the darkness, your senses will be captivated by the serene atmosphere and the impressive sights illuminated by the boat's spotlight. The river is also home to a diverse ecosystem, with numerous bat species, birds, and marine creatures inhabiting its surroundings, making it a paradise for nature lovers and wildlife enthusiasts.</p>
+                        <p>The Underground River in Palawan offers a unique blend of natural grandeur and cultural significance. It is not only a geological wonder but also holds historical and cultural importance for the local communities. The site is believed to have been a sacred place for indigenous people, and the cave walls are adorned with ancient rock art, adding an extra layer of intrigue and wonder. With its captivating beauty and cultural significance, the Underground River in Palawan is a must-visit destination that leaves a lasting impression on all who experience its enchanting subterranean realm.</p>
+                    </div>
+            </div>
+            <div class="wrap animate pop">
+                <div class="overlay">
+                    <div class="overlay-content animate slide-left delay-2">
+                        <h1 class="animate slide-left pop delay-4">Coron Island</h1>
+                        <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Philippines: <em>Palawan</em></p>
+                    </div>
+                    <div class="image-content5 animate slide delay-5"></div>
+                            <div class="dots animate">
+                                <div class="dot animate slide-up delay-6"></div>
+                                <div class="dot animate slide-up delay-7"></div>
+                                <div class="dot animate slide-up delay-8"></div>
+                            </div>
+                </div>
+                    <div class="text">
+                        <p>Coron Island, located in the province of Palawan in the Philippines, is a true tropical paradise renowned for its pristine beaches, crystal-clear turquoise waters, and stunning limestone formations. This enchanting destination is part of the larger Calamian Archipelago and offers visitors a diverse range of natural wonders and outdoor activities. It is often hailed as one of the top island destinations in the world.</p>
+                        <p>
+                            Coron Island is a haven for nature lovers and adventure seekers. The island is known for its iconic limestone cliffs, including the famous Kayangan Lake, which is often referred to as the cleanest lake in the Philippines. The lake's emerald-green waters are surrounded by towering karst formations, creating a breathtaking and surreal atmosphere. In addition to the captivating landscapes, Coron Island is renowned for its world-class diving and snorkeling opportunities. Beneath the surface of the turquoise waters, you'll find vibrant coral reefs teeming with marine life, including colorful tropical fish and even shipwrecks from World War II, making it a paradise for underwater exploration.</p>
+                        <p>Beyond the natural beauty, Coron Island offers a range of activities for visitors to enjoy. You can embark on island-hopping tours to discover hidden lagoons, white sand beaches, and enchanting caves. Trekking opportunities are available to explore the lush jungles and discover panoramic viewpoints offering stunning vistas of the surrounding islands and ocean. The island is also home to indigenous communities, allowing visitors to immerse themselves in the local culture and learn about the traditions and way of life of the Tagbanua people.</p>
+                    </div>
+            </div>
+            <div class="wrap animate pop">
+                <div class="overlay">
+                    <div class="overlay-content animate slide-left delay-2">
+                        <h1 class="animate slide-left pop delay-4">Vigan City</h1>
+                        <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Philippines: <em>Ilocos Sur</em></p>
+                    </div>
+                    <div class="image-content6 animate slide delay-5"></div>
+                            <div class="dots animate">
+                                <div class="dot animate slide-up delay-6"></div>
+                                <div class="dot animate slide-up delay-7"></div>
+                                <div class="dot animate slide-up delay-8"></div>
+                            </div>
+                </div>
+                    <div class="text">
+                        <p>Vigan City, located in the province of Ilocos Sur in the Philippines, is a charming and historic city that beautifully showcases Spanish colonial architecture and heritage. It is recognized as a UNESCO World Heritage site and is often referred to as a living museum of Philippine history. Vigan City stands as a testament to the rich cultural fusion of Spanish, Chinese, and Filipino influences, offering visitors a glimpse into the country's colonial past.</p>
+                        <p>The city's most notable feature is its well-preserved Spanish colonial architecture, particularly along Calle Crisologo. This cobblestone street is lined with ancestral houses dating back to the 18th century, showcasing intricate wooden designs, colorful facades, and traditional red-tiled roofs. Taking a leisurely stroll along Calle Crisologo transports visitors back in time, evoking a sense of nostalgia and offering an opportunity to appreciate the city's architectural beauty.</p>
+                        <p>Vigan City's unique blend of history, culture, and architecture makes it a must-visit destination for those seeking to experience the charm of colonial-era Philippines. Its well-preserved heritage and warm hospitality create an enchanting atmosphere, leaving visitors with lasting memories of a bygone era.</p>
+                    </div>
+            </div>
+       
+        </div>
+      </div>
+    </div>
+</body>
+</html>

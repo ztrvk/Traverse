@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <link rel="icon" href="download (1).png" type="image/png">
+    <title>Traverse</title>
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+       }
+       body, html {
+        height: 65%;
+       }
+       .banner {
+        width: 100%;
+        height: 730vh;
+        background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://www.luxuriousmagazine.com/wp-content/uploads/2020/08/Pavilions-El-Nido-Palawan-Island-aerial-photo.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+       }
+       .navbar {
+        width: 85%;
+        margin: auto;
+        padding: 35px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       }
+       .logo {
+        width: 200px;
+        cursor: pointer;
+       }
+       .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+       }
+       .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+       }
+       .navbar ul li::after {
+        content: '';
+        height: 3px;
+        width: 0;
+        background: #009688;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+       }
+       .navbar ul li:hover:after {
+        width: 100%;
+       }
+ 
+       .row {
+  display: flex;
+}
+
+.columna {
+  margin-left: 50px;
+  width: 65%;
+}
+.columna h1 {
+  font-size: 30px;
+  color: #fff;
+}
+.columna h2 {
+  font-size: 25px;
+  color: #fff;
+}
+.columna p {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+.columnb {
+  width: 35%;
+  
+}
+.wrapper {
+  float: right;
+  width: 70%;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+.card {
+  margin-left: 10px;
+  width: 300px;
+  height: 350px;
+  padding: 2rem 1rem;
+  background: none;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+}
+.card2 {
+  margin-left: 10px;
+  width: 300px;
+  height: 100px;
+  padding: 2rem 1rem;
+  background: none;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+}
+
+.card2:hover {
+  transform: translateY(20px);
+}
+.card2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.card2:hover:before {
+  opacity: 1;
+}
+.card2 img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card2 .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.card2:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.card2 .info h1 {
+  margin: 0;
+}
+.card .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.card2 .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.card2 .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+.card:hover {
+  transform: translateY(20px);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.card:hover:before {
+  opacity: 1;
+}
+.card img {
+  width: 350px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+.card .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.card .info h1 {
+  margin: 0;
+}
+.card .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.card .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.card .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+.ref{
+    margin:45px;
+    text-align: center;
+}
+.ref h2 {
+    font-size: 25px;
+    color: #fff;
+}
+.ref p {
+    font-size: 15px;
+    color: #fff;  
+}
+.ref a {
+    color: #fff;
+    text-decoration-line: none;
+}
+footer {
+  color: #fff;
+   text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="web.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+ 
+    <div class="row">
+      <div class="columna">
+        
+        <h1>About:</h1>
+        <p>Welcome to the Traverse Webpage! We are your go-to resource for exploring the stunning beauty and rich cultural heritage of the Philippines.</p>
+
+        <p> The Philippines is a captivating archipelago consisting of over 7,000 islands, each offering a unique blend of natural wonders, historical sites, and warm hospitality. Our mission is to showcase the best that the Philippines has to offer and help you create unforgettable travel experiences.</p>
+            
+            <p>  From pristine white-sand beaches and crystal-clear turquoise waters to lush mountains and vibrant cityscapes, the Philippines is a paradise for nature lovers, adventure seekers, and culture enthusiasts alike. Whether you're looking to relax and unwind or embark on thrilling adventures, our country has it all.</p>
+            
+                <p> Discover the world-renowned Boracay Island, where you can bask in the sun, indulge in water sports, and experience the vibrant nightlife. Immerse yourself in the crystal clear water and beautiful islands of Coron Palawan.</p>
+            
+                    <p>   Explore the captivating landscapes of Palawan, home to the mesmerizing Underground River, declared as one of the New 7 Wonders of Nature.</p>
+            
+                        <p>   Unleash your inner adventurer in the stunning Chocolate Hills of Bohol or go spelunking in the mystical caves of Sagada. Marvel at the magnificent Mayon Volcano in Albay or hike to the summit of Mount Pulag for a breathtaking sunrise above the clouds.</p>
+            
+                            <p>Indulge in the diverse and delectable culinary delights of the Philippines, from savory adobo to the famous lechon. Experience the warmth and hospitality of the Filipino people, known for their genuine smiles and welcoming nature.</p>
+            
+                                <p>    At the Traverse Webpage, we strive to provide you with comprehensive information, and recommendations to help you plan your perfect Philippine adventure. Whether you're a solo traveler, a family on vacation, or a group of friends seeking new experiences, we are here to assist you every step of the way.</p>
+                                <p>    Start your journey now and let the Philippines enchant you with its beauty, culture, and countless wonders. Explore our website, connect with fellow travelers in our community forums, and get ready to embark on the adventure of a lifetime.</p>
+            
+                                        <p>  Thank you for visiting Traverse Webpage. Get ready to discover the magic of the Philippines!</p>
+      </div>
+      <div class="columnb">
+        <div class="wrapper">
+          <div class="card">
+            <img src="download.png">
+            <div class="info">
+              <h1>Traverse</h1>
+
+            </div>
+          </div>
+
+          <div class="columnb">
+            <div class="wrapper">
+              <div class="card2">
+                <img src="logo.png" style="width: 330px; height: 100px;">
+                <div class="info">
+                  <h1>Traverse</h1>
+    
+                </div>
+
+              </div>
+    
+       
+
+         
+        </div>
+      </div>
+    </div>
+
+    </div>
+   
+</div>
+<div class="ref">
+    <h2>References:</h2>
+     <br>
+     <p> Title: Aerial Photo of Pavilions El Nido, Palawan Island<br>
+       Website: Luxurious Magazine<br>
+       URL: <a href="https://www.luxuriousmagazine.com/wp-content/uploads/2020/08/Pavilions-El-Nido-Palawan-Island-aerial-photo.jpg">https://www.luxuriousmagazine.com/wp-content/uploads/2020/08/Pavilions-El-Nido-Palawan-Island-aerial-photo.jpg</a>
+    </p>
+    <br>
+    <P>Title: Image on Reddit<br>
+     Website: Reddit<br>
+     URL: <a href="https://preview.redd.it/s1guz02t3foz.jpg?auto=webp&s=dd63f9ed9b1a30f341d612f239a271d62b199087">https://preview.redd.it/s1guz02t3foz.jpg?auto=webp&s=dd63f9ed9b1a30f341d612f239a271d62b199087</a></P>
+     <br>
+     <P>Title: Boracay Resorts Image<br>
+     Website: Blogspot<br>
+     URL: <a href="https://2.bp.blogspot.com/-NE7XHW1fIYM/UCDgCKZ8SxI/AAAAAAAABrI/lVbO8w36EOM/s1600/boracay+resorts.jpg">https://2.bp.blogspot.com/-NE7XHW1fIYM/UCDgCKZ8SxI/AAAAAAAABrI/lVbO8w36EOM/s1600/boracay+resorts.jpg</a></P>
+     <br>
+     <P> Title: Image from Pinterest<br>
+     Website: Pinterest<br>
+     URL: <a href="https://i.pinimg.com/736x/a5/7b/c8/a57bc8c23da04c23f715fc488e2218a1.jpg">https://i.pinimg.com/736x/a5/7b/c8/a57bc8c23da04c23f715fc488e2218a1.jpg</a></P>
+     <br>
+     <P>Title: Luzon Map<br>
+       Website: NATCCO Global Filipinos<br>
+       URL: <a href=" https://natccoglobalfilipinos.natcco.coop/wp-content/uploads/2018/05/luzon.png">https://natccoglobalfilipinos.natcco.coop/wp-content/uploads/2018/05/luzon.png</a></P>
+       <br>
+       <P>   Title: Experiences<br>
+Website: Unknown (cloudfront.net)<br>
+URL:  <a href="https://dbijapkm3o6fj.cloudfront.net/resources/12839,1004,1,6,4,0,600,450/-4601-/20170307202351/experiences.jpeg ">https://dbijapkm3o6fj.cloudfront.net/resources/12839,1004,1,6,4,0,600,450/-4601-/20170307202351/experiences.jpeg </a>  </p>
+<br>
+
+<P> Title: Picture<br>
+Website: Lemi<br>
+URL: <a href=" https://lemiapp.com/api/v3/fullsize?url=https://lemi.travel/uploads/picture-1581578945957.jpg">https://lemiapp.com/api/v3/fullsize?url=https://lemi.travel/uploads/picture-1581578945957.jpg</a>   </p>
+<br>
+
+<P> Title: DJI_0195<br>
+Website: The World Travel Guy<br>
+URL:  <a href="https://theworldtravelguy.com/wp-content/uploads/2020/02/DJI_0195.jpg  ">https://theworldtravelguy.com/wp-content/uploads/2020/02/DJI_0195.jpg</a> </p>
+<br>
+
+<P> Title: Puerto Princesa Subterranean River National Park<br>
+Website: Philippines Retreats<br>
+URL: <a href=" https://www.philippinesretreats.com/wp-content/uploads/2021/04/4-Puerto-Princesa-Subterranean-River-National-Park.jpg "> https://www.philippinesretreats.com/wp-content/uploads/2021/04/4-Puerto-Princesa-Subterranean-River-National-Park.jpg</a>  </p>
+<br>
+
+<P> Title: Shutterstock_634025597<br>
+Website: The Culture Trip<br>
+URL: <a href=" https://cdn.theculturetrip.com/wp-content/uploads/2018/02/shutterstock_634025597.jpg "> https://cdn.theculturetrip.com/wp-content/uploads/2018/02/shutterstock_634025597.jpg </a>  </p>
+<br>
+<P> Title: Cagsawa ruins with Mayon Volcano at the background<br>
+Website: Zenfs (Inbox blog)<br>
+URL: <a href=" https://th.bing.com/th/id/R.f3148dfd691773901be3e489c404a23c?rik=W%2fsmM6D8YWcyBQ&riu=http%3a%2f%2fmedia.zenfs.com%2fen-PH%2fblogs%2finbox%2fCagsawa-ruins-with-Mayon-Volcano-at-the-background.-From-flickr..jpg&ehk=kc897OxggsX5ixwmQpveaePIhF%2bvI5t9Vvo6BKsIjPk%3d&risl=&pid=ImgRaw&r=0 "> https://th.bing.com/th/id/R.f3148dfd691773901be3e489c404a23c?rik=W%2fsmM6D8YWcyBQ&riu=http%3a%2f%2fmedia.zenfs.com%2fen-PH%2fblogs%2finbox%2fCagsawa-ruins-with-Mayon-Volcano-at-the-background.-From-flickr..jpg&ehk=kc897OxggsX5ixwmQpveaePIhF%2bvI5t9Vvo6BKsIjPk%3d&risl=&pid=ImgRaw&r=0 </a>  </p>
+<br>
+
+<P> Title: Philippines Desktop Wallpaper 1920x1080 for iPhone 6<br>
+Website: GetWallpapers<br>
+URL: <a href=" https://getwallpapers.com/wallpaper/full/c/3/d/1193846-philippines-desktop-wallpaper-1920x1080-for-iphone-6.jpg  "> https://getwallpapers.com/wallpaper/full/c/3/d/1193846-philippines-desktop-wallpaper-1920x1080-for-iphone-6.jpg  </a> </p>
+<br>
+
+<P>Title: Boracay Island White Beach, Philippines<br>
+Website: Naturalis Expeditions<br>
+URL: <a href="https://www.naturalis-expeditions.com/wp-content/uploads/2016/07/Boracay-Island-White-Beach-Philippines-1024x637.jpg">https://www.naturalis-expeditions.com/wp-content/uploads/2016/07/Boracay-Island-White-Beach-Philippines-1024x637.jpg</a></p>
+<br>
+
+<P>Title: Boracay Resorts<br>
+Website: Blogspot<br>
+URL: <a href="https://2.bp.blogspot.com/-NE7XHW1fIYM/UCDgCKZ8SxI/AAAAAAAABrI/lVbO8w36EOM/s1600/boracay+resorts.jpg">https://2.bp.blogspot.com/-NE7XHW1fIYM/UCDgCKZ8SxI/AAAAAAAABrI/lVbO8w36EOM/s1600/boracay+resorts.jpg</a></p>
+<br>
+
+<P>Title: Boracay Beach<br>
+Website: Blogspot<br>
+URL:<a href=" https://th.bing.com/th/id/R.c5089ecb83222848c4e7bd4e325cbf73?rik=mvCRuoIwppOv%2fA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-wEoKhODUIMc%2fVFl2t999-_I%2fAAAAAAAACv4%2fpt-2-4lP6oY%2fs1600%2fboracay_beach_5.jpg&ehk=88momS40XD33tH9ciX8SLhnuZmqAIgqTo02c1fKgFNY%3d&risl=&pid=ImgRaw&r=0"> https://th.bing.com/th/id/R.c5089ecb83222848c4e7bd4e325cbf73?rik=mvCRuoIwppOv%2fA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-wEoKhODUIMc%2fVFl2t999-_I%2fAAAAAAAACv4%2fpt-2-4lP6oY%2fs1600%2fboracay_beach_5.jpg&ehk=88momS40XD33tH9ciX8SLhnuZmqAIgqTo02c1fKgFNY%3d&risl=&pid=ImgRaw&r=0</a></p>
+<br>
+
+<P>Title: Image<br>
+Website: Bing<br>
+URL:<a href=" https://th.bing.com/th/id/OIP.mNz8lx12R7B9wDTrAG5-AAHaFk?w=227&h=180&c=7&r=0&o=5&pid=1.7">https://th.bing.com/th/id/OIP.mNz8lx12R7B9wDTrAG5-AAHaFk?w=227&h=180&c=7&r=0&o=5&pid=1.7</a></p>
+<br>
+
+<P>Title: Chocolate Hills<br>
+Website: Unusual Places<br>
+URL:<a href=" https://i0.wp.com/unusualplaces.org/wp-content/uploads/2019/05/chocolatehills2.jpg">https://i0.wp.com/unusualplaces.org/wp-content/uploads/2019/05/chocolatehills2.jpg</a></p>
+<br>
+
+<P>Title: Hills<br>
+Website: Unusual Places<br>
+URL: <a href="https://i1.wp.com/unusualplaces.org/wp-content/uploads/2019/05/hills.jpg?w=1920&ssl=1">https://i1.wp.com/unusualplaces.org/wp-content/uploads/2019/05/hills.jpg?w=1920&ssl=1</a></p>
+<br>
+<P>Title: Image<br>
+Website: Bing<br>
+URL: <a href="https://th.bing.com/th/id/OIP.Ie6zdx8x-KMpHlOybKvCEwHaFj?pid=ImgDet&w=520&h=390&rs=1">https://th.bing.com/th/id/OIP.Ie6zdx8x-KMpHlOybKvCEwHaFj?pid=ImgDet&w=520&h=390&rs=1</a></p>
+<br>
+<P>Title: Image<br>
+Website: Hotels.com<br>
+URL: <a href="https://a.cdn-hotels.com/gdcs/production86/d1393/066c104b-e8c0-4364-b281-69bc7bd970d3.jpg">https://a.cdn-hotels.com/gdcs/production86/d1393/066c104b-e8c0-4364-b281-69bc7bd970d3.jpg</a></P>
+<br>
+<P>Title: Image<br>
+Website: Pinterest<br>
+URL:<a href=" https://i.pinimg.com/736x/88/6a/be/886abec2e279d57f1576f9024f72c52c.jpg">https://i.pinimg.com/736x/88/6a/be/886abec2e279d57f1576f9024f72c52c.jpg</a></P>
+<br>
+<P>Title: DSC_0368<br>
+Website: A Wanderful Sole<br>
+URL:<a href=" https://i2.wp.com/www.awanderfulsole.com/wp-content/uploads/2017/08/DSC_0368.jpg?fit=1800%2C1200&ssl=1"> https://i2.wp.com/www.awanderfulsole.com/wp-content/uploads/2017/08/DSC_0368.jpg?fit=1800%2C1200&ssl=1</a></P>
+<br>
+<P>Title: Kalanggaman Island<br>
+Website: Biliran Island Tourism<br>
+URL:<a href=" https://tourism.biliranisland.com/wp-content/uploads/2017/08/Kalanggaman-Island-1.jpg">https://tourism.biliranisland.com/wp-content/uploads/2017/08/Kalanggaman-Island-1.jpg</a></P>
+<br>
+<P>Title: Image<br>
+Website: Reddit<br>
+URL:<a href=" https://i.redd.it/lbcmurq6pzv01.jpg">https://i.redd.it/lbcmurq6pzv01.jpg</a></P>
+<br>
+<P>Title: Image<br>
+Website: Pinterest<br>
+URL: <a href="https://i.pinimg.com/originals/91/06/27/910627401a48390740ed60bc3a4b1c80.jpg">https://i.pinimg.com/originals/91/06/27/910627401a48390740ed60bc3a4b1c80.jpg</a></P>
+<br>
+<P>Title: Cambugahay Falls, Siquijor<br>
+Website: Audley Travel<br>
+URL:<a href=" https://cdn.audleytravel.com/-/-/79/1029007-cambugahay-falls-siquijor.jpg">https://cdn.audleytravel.com/-/-/79/1029007-cambugahay-falls-siquijor.jpg</a></P>
+<br>
+<P>Title: Image<br>
+Website: Reddit<br>
+URL: <a href="https://preview.redd.it/240drh300jg31.jpg?auto=webp&s=48468dca705affc1133a37e623a4613eceff142c">https://preview.redd.it/240drh300jg31.jpg?auto=webp&s=48468dca705affc1133a37e623a4613eceff142c</a></P>
+<br>
+<P>Title: Cambugahay Falls, Lazi, Siquijor Island, Philippines<br>
+Website: Fine Art America<br>
+URL:<a href=" https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/cambugahay-falls-lazi-siquijor-island-philippines-cavan-images.jpg">https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/cambugahay-falls-lazi-siquijor-island-philippines-cavan-images.jpg</a></P>
+<br>
+<P>Title: Image<br>
+Website: Reddit<br>
+URL:<a href=" https://preview.redd.it/f82j7sfk5dz11.jpg?auto=webp&s=412798607a0ec728e5d57338dc3f9e0afe32ad9d"> https://preview.redd.it/f82j7sfk5dz11.jpg?auto=webp&s=412798607a0ec728e5d57338dc3f9e0afe32ad9d</a></P>
+<br>
+<P>Title: Mount Mayon, Albay, Philippines<br>
+Website: iStockphoto<br>
+URL: <a href="https://media.istockphoto.com/photos/mount-mayon-albay-philippines-picture-id930777378?k=6&m=930777378&s=170667a&w=0&h=FSHvKt3RFwhWQjkd9_5-0riz45nJXxjRscp_uoT9STs=">https://media.istockphoto.com/photos/mount-mayon-albay-philippines-picture-id930777378?k=6&m=930777378&s=170667a&w=0&h=FSHvKt3RFwhWQjkd9_5-0riz45nJXxjRscp_uoT9STs=</a></P>
+<br>
+<P>Title: Image<br>
+Website: Reddit<br>
+URL:<a href=" https://preview.redd.it/s1guz02t3foz.jpg?auto=webp&s=dd63f9ed9b1a30f341d612f239a271d62b199087">https://preview.redd.it/s1guz02t3foz.jpg?auto=webp&s=dd63f9ed9b1a30f341d612f239a271d62b199087</P>
+<br>
+<P>Title: Image<br>
+Website: Pinterest<br>
+URL: <a href="https://i.pinimg.com/736x/a5/7b/c8/a57bc8c23da04c23f715fc488e2218a1.jpg">https://i.pinimg.com/736x/a5/7b/c8/a57bc8c23da04c23f715fc488e2218a1.jpg</a></P>
+<br>
+<P>Title: Image<br>
+Website: Reddit<br>
+URL: <a href="https://i.redd.it/48r12mubppk01.jpg">https://i.redd.it/48r12mubppk01.jpg</a></P>
+<br>
+<P>Title: Kawasan Falls from Second Level<br>
+Website: GTTP (Global Travel and Tourism Partnership)<br>
+URL:<a href=" https://gttp.imgix.net/195229/x/0/kawasan-falls-from-second-level-1.jpg">https://gttp.imgix.net/195229/x/0/kawasan-falls-from-second-level-1.jpg</a></P>
+<br>
+<P>Title: Kawasan Falls Cebu Day Tour with Molave Milk Station Side Trip<br>
+Website: GTTP (Global Travel and Tourism Partnership)<br>
+URL:<a href=" https://gttp.imgix.net/195228/x/0/kawasan-falls-cebu-day-tour-with-molave-milk-station-side-trip.jpg">https://gttp.imgix.net/195228/x/0/kawasan-falls-cebu-day-tour-with-molave-milk-station-side-trip.jpg</a></P>
+<br>
+<P>Title: Kawasan Falls Cebu - The Island Nomad<br>
+Website: Sugbo.ph<br>
+URL: <a href="https://sugbo.ph/wp-content/uploads/2020/06/Kawasan-Falls-Cebu-The-Island-Nomad-11.jpg">https://sugbo.ph/wp-content/uploads/2020/06/Kawasan-Falls-Cebu-The-Island-Nomad-11.jpg</a></P>
+
+<p>
+Title: Tropical Guyam Island with Traditional Fishing Boats, Siargao<br>
+Website: iStockphoto<br>
+URL:<a href=" https://media.istockphoto.com/photos/tropical-guyam-island-with-traditional-fishing-boats-siargao-picture-id860794652?k=6&m=860794652&s=170667a&w=0&h=HMqUpBQ_gPPNGU_qEokTRJVmoyS1jMfFMHOyTeAFTjk="> https://media.istockphoto.com/photos/tropical-guyam-island-with-traditional-fishing-boats-siargao-picture-id860794652?k=6&m=860794652&s=170667a&w=0&h=HMqUpBQ_gPPNGU_qEokTRJVmoyS1jMfFMHOyTeAFTjk=</a>
+<br>
+<br>
+Title: Image<br>
+Website: Summit Media<br>
+URL:<a href=" https://images.summitmedia-digital.com/preview/images/2017/02/03/1-mizturr_t.jpg"> https://images.summitmedia-digital.com/preview/images/2017/02/03/1-mizturr_t.jpg</a>
+<br>
+<br>
+Title: Lanao del Norte Tinago Falls<br>
+Website: Travel to the Philippines<br>
+URL:<a href=" http://www.traveltothephilippines.info/wp-content/uploads/2019/11/Lanao-del-Norte-Tinago-Falls3.jpg"> http://www.traveltothephilippines.info/wp-content/uploads/2019/11/Lanao-del-Norte-Tinago-Falls3.jpg</a>
+<br>
+<br>
+Title: Image<br>
+Website: Wallpaper Cave<br>
+URL: <a href="https://wallpapercave.com/wp/wp3924909.jpg">https://wallpapercave.com/wp/wp3924909.jpg</a>
+<br>
+<br>
+
+Title: Siargao Island Hopping and Sohoton Cove Day Tour with Transfers<br>
+Website: Great Travel Tips Philippines<br>
+URL:<a href=" https://gttp.imgix.net/226390/x/0/siargao-island-hopping-and-sohoton-cove-day-tour-with-transfers-2.jpg">https://gttp.imgix.net/226390/x/0/siargao-island-hopping-and-sohoton-cove-day-tour-with-transfers-2.jpg</a>
+<br>
+<br>
+Title: Siargao Island Pictures - Photo Gallery<br>
+Website: Journey Era<br>
+URL:<a href=" https://www.journeyera.com/wp-content/uploads/2018/01/siargao-island-pictures-photo-gallery-0315.jpg"> https://www.journeyera.com/wp-content/uploads/2018/01/siargao-island-pictures-photo-gallery-0315.jpg</a>
+<br>
+<br>
+Title: Great Santa Cruz Island Pink Beach, Philippines<br>
+Website: Travel Tour XP<br>
+URL: <a href="http://www.traveltourxp.com/wp-content/uploads/2016/10/Great-Santa-Cruz-Island-Pink-Beach-Philippines.jpg">http://www.traveltourxp.com/wp-content/uploads/2016/10/Great-Santa-Cruz-Island-Pink-Beach-Philippines.jpg</a>
+<br>
+<br>
+Title: Image<br>
+Website: Pinterest<br>
+URL:<a href=" https://i.pinimg.com/originals/42/56/ff/4256ff3ee4d61618facd55d27422f202.jpg"> https://i.pinimg.com/originals/42/56/ff/4256ff3ee4d61618facd55d27422f202.jpg</a>
+<br>
+<br>
+Title: Pink Sand Beach of Sta. Cruz Island<br>
+Website: Primer PH<br>
+URL: <a href="https://primer.com.ph/blog/wp-content/uploads/sites/14/2016/12/Pink-Sand-Beach-of-Sta-Cruz-Island.jpeg">https://primer.com.ph/blog/wp-content/uploads/sites/14/2016/12/Pink-Sand-Beach-of-Sta-Cruz-Island.jpeg</a>
+<br>
+<br>
+Title: Image<br>
+Website: Pinterest<br>
+URL:<a href=" https://i.pinimg.com/originals/54/f9/b7/54f9b714e375f2f453418672a2ef79b2.jpg">https://i.pinimg.com/originals/54/f9/b7/54f9b714e375f2f453418672a2ef79b2.jpg</a>
+<br>
+<br>
+Title: Tinago Falls, Iligan City<br>
+Website: Blogger<br>
+URL:<a href=" https://1.bp.blogspot.com/-WM3OHfrlQyI/XxQpz7WEAzI/AAAAAAAAzDk/dLLj1BgI-5QFW5Waj7EKjoR8LM4DQpAfQCLcBGAsYHQ/s1600/Tinago%2BFalls_Iligan%2BCity.JPG"> https://1.bp.blogspot.com/-WM3OHfrlQyI/XxQpz7WEAzI/AAAAAAAAzDk/dLLj1BgI-5QFW5Waj7EKjoR8LM4DQpAfQCLcBGAsYHQ/s1600/Tinago%2BFalls_Iligan%2BCity.JPG</a>
+<br>
+<br>
+Title: Unknown<br>
+Website: Blogger<br>
+URL:<a href=" https://1.bp.blogspot.com/-c4iZ1TQ5heY/UT8mNVBHfGI/AAAAAAAAfm8/2sQg0fwCY3U/s1600/4523788706_643801c970_b.jpg"> https://1.bp.blogspot.com/-c4iZ1TQ5heY/UT8mNVBHfGI/AAAAAAAAfm8/2sQg0fwCY3U/s1600/4523788706_643801c970_b.jpg</a>
+<br>
+<br>
+Title: Unknown<br>
+Website: EcoPhiles<br>
+URL: <a href="https://ecophiles.com/wp-content/uploads/2017/07/35171817502_461540e973_o.jpg?189db0">https://ecophiles.com/wp-content/uploads/2017/07/35171817502_461540e973_o.jpg?189db0</a>
+<br>
+<br>
+
+Title: Unknown<br>
+Website: Roxanne Lacap<br>
+URL:<a href=" https://i1.wp.com/roxannelacap.com/wp-content/uploads/2018/05/Aliwagwag-Falls.jpg?resize=1080%2C1350"> https://i1.wp.com/roxannelacap.com/wp-content/uploads/2018/05/Aliwagwag-Falls.jpg?resize=1080%2C1350</a>
+<br>
+<br>
+
+Title: Unknown<br>
+Website: Reddit<br>
+URL:<a href=" https://preview.redd.it/s1guz02t3foz.jpg?auto=webp&s=dd63f9ed9b1a30f341d612f239a271d62b199087">https://preview.redd.it/s1guz02t3foz.jpg?auto=webp&s=dd63f9ed9b1a30f341d612f239a271d62b199087</a>
+<br>
+<br>
+
+Title: Unknown<br>
+Website: Blogspot<br>
+URL:<a href=" https://2.bp.blogspot.com/-NE7XHW1fIYM/UCDgCKZ8SxI/AAAAAAAABrI/lVbO8w36EOM/s1600/boracay+resorts.jpg"> https://2.bp.blogspot.com/-NE7XHW1fIYM/UCDgCKZ8SxI/AAAAAAAABrI/lVbO8w36EOM/s1600/boracay+resorts.jpg</a>
+<br>
+<br>
+
+Title: Unknown<br>
+Website: Blogspot<br>
+URL: <a href="https://1.bp.blogspot.com/-a1pk-rqBwbk/VViuLqTKCdI/AAAAAAAARPU/3P4Jgp4SsIA/s640/safe%2Bplaces%2Bin%2BMindanao%2Benchanted%2Briver.jpg">https://1.bp.blogspot.com/-a1pk-rqBwbk/VViuLqTKCdI/AAAAAAAARPU/3P4Jgp4SsIA/s640/safe%2Bplaces%2Bin%2BMindanao%2Benchanted%2Briver.jpg</a>
+<br>
+<br>
+
+Title: Unknown<br>
+Website: traveltothephilippines.info<br>
+URL: <a href="https://www.traveltothephilippines.info/wp-content/uploads/2019/03/Davao-Oriental7-300x300.jpg">https://www.traveltothephilippines.info/wp-content/uploads/2019/03/Davao-Oriental7-300x300.jpg</a>
+<br>
+<br>
+
+Title: Unknown<br>
+Website: imagekit.io<br>
+URL:<a href=" https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001836261591/Aliwagwag%2520Falls%2520-%25201-Day%2520Tour%2520-1374fd55-9a3f-42dc-8242-431534d30626.jpeg?_src=imagekit&tr=dpr-3"> https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001836261591/Aliwagwag%2520Falls%2520-%25201-Day%2520Tour%2520-1374fd55-9a3f-42dc-8242-431534d30626.jpeg?_src=imagekit&tr=dpr-3</a>
+</p>
+</div>
+<footer>
+  <p>&copy; 2023 Traverse. All rights reserved.</p>
+</footer>
+</div>
+</body>
+</html> 

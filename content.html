@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <link rel="icon" href="download (1).png" type="image/png">
+    <title>Traverse</title>
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+       }
+       .banner {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://www.luxuriousmagazine.com/wp-content/uploads/2020/08/Pavilions-El-Nido-Palawan-Island-aerial-photo.jpg);
+        background-size: cover;
+        background-position: center;
+       }
+       .navbar {
+        width: 85%;
+        margin: auto;
+        padding: 35px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       }
+       .logo {
+        width: 200px;
+        cursor: pointer;
+       }
+       .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+       }
+       .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+       }
+       .navbar ul li::after {
+        content: '';
+        height: 3px;
+        width: 0;
+        background: #009688;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+       }
+       .navbar ul li:hover:after {
+        width: 100%;
+       }
+ 
+       .row {
+  display: flex;
+}
+ 
+.columna {
+  margin-left: 50px;
+  width: 30%;
+}
+.columna h1 {
+  font-size: 70px;
+  color: #fff;
+}
+.columna h2 {
+  font-size: 45px;
+  color: #fff;
+}
+.columna p {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.columnb {
+ width: 65%;
+  
+}
+.wrapper {
+  float: right;
+  display: flex;
+  width: 70%;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+.card {
+  margin-left: 10px;
+  width: 400px;
+  height: 260px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+}
+.card:hover {
+  transform: translateY(20px);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.card:hover:before {
+  opacity: 1;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.card .info h1 {
+  margin: 0;
+}
+.card .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.card .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.card .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="web.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+   
+    <div class="row">
+      <div class="columna">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>Discover the</h2>
+        <h1>Philippines</h1>
+        <p>Experience the Philippines, a tropical paradise bursting with breathtaking landscapes, vibrant culture, and warm hospitality, where every adventure and moment is bound to leave an indelible mark on your soul.</p>
+      </div>
+      <div class="columnb">
+        <div class="wrapper">
+          <div class="card">
+            <img src="https://preview.redd.it/s1guz02t3foz.jpg?auto=webp&s=dd63f9ed9b1a30f341d612f239a271d62b199087">
+            <div class="info">
+              <h1>Luzon</h1>
+              <p>Philippines</p>
+              <a href="luzon.html" class="button">Read More</a>
+            </div>
+          </div>
+ 
+          <div class="card">
+            <img src="https://2.bp.blogspot.com/-NE7XHW1fIYM/UCDgCKZ8SxI/AAAAAAAABrI/lVbO8w36EOM/s1600/boracay+resorts.jpg">
+            <div class="info">
+              <h1>Visayas</h1>
+              <p>Philippines</p>
+              <a href="visayas.html" class="button">Read More</a>
+            </div>
+          </div>
+ 
+          <div class="card">
+            <img src="https://i.pinimg.com/736x/a5/7b/c8/a57bc8c23da04c23f715fc488e2218a1.jpg">
+            <div class="info">
+              <h1>Mindanao</h1>
+              <p>Philippines</p>
+              <a href="mindanao.html" class="button">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</body>
+</html>

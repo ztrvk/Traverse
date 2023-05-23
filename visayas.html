@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="download (1).png" type="image/png">
+    <title>Traverse</title>
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+       }
+       body, html {
+        height: 100%;
+       }
+       .banner {
+        width: 100%;
+        height: 650vh;
+        background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://www.luxuriousmagazine.com/wp-content/uploads/2020/08/Pavilions-El-Nido-Palawan-Island-aerial-photo.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+       }
+       .navbar {
+        width: 85%;
+        margin: auto;
+        padding: 35px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       }
+       .logo {
+        width: 200px;
+        cursor: pointer;
+       }
+       .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+       }
+       .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+       }
+       .navbar ul li::after {
+        content: '';
+        height: 3px;
+        width: 0;
+        background: #009688;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+       }
+       .navbar ul li:hover:after {
+        width: 100%;
+       }
+ .main {
+    display: flex;
+    width: 100%;
+ }
+ .main p {
+  color: #f5f5f5;
+  font-size: 15px;
+  padding: 10px;
+ }
+ .main h1 {
+  color: #f5f5f5;
+  font-size: 30px;
+ }
+ .row1 {
+    width: 50%;
+    padding: 50px;
+ }
+ .row2 {
+    width: 50%;
+    padding: 50px;
+ }
+ 
+.wrapper {
+  width: 100%;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+.iba {
+  display: flex;
+}
+ 
+.card {
+  margin-left: 10px;
+  width: 420px;
+  height: 300px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+}
+ 
+.card:hover {
+  transform: translateY(-20px);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(219, 252, 248, 0.24), rgba(105, 148, 228, 0.87));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.card:hover:before {
+  opacity: 1;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.card .info h1 {
+  margin: 0;
+}
+.card .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.card .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.card .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+ 
+.card2 {
+  margin-left: 10px;
+  width: 400px;
+  height: 300px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+}
+.card2:hover {
+  transform: translateY(-20px);
+}
+.card2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(78, 85, 84, 0.918), rgba(60, 65, 75, 0.87));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.card2:hover:before:hover:before {
+  opacity: 1;
+}
+.card2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card2 .info {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+  margin-bottom: 20px;
+}
+.card2:hover .info {
+  opacity: 1;
+  transform: translateY(30px);
+}
+.card2 .info h1 {
+  margin: 0;
+}
+.card2 .info p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.card2 .info .button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 50px;
+}
+.card2 .info .button:hover {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+.wrapper1 {
+  display: flex;
+}
+.wrapper1 .card {
+  height: 100px;width: 110px;
+}
+.wrapper1 h1 {
+  font-size: 18px;
+}
+   
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="web.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+   
+ 
+        <h2 style="color: #f5f5f5;font-size: 35px;  padding-left: 40px;">Next Stop</h2>
+        <h1  style="color: #f5f5f5; font-size: 70px;  padding-left: 40px;">Visayas</h1>
+        <br>
+      
+        <p style="color: #f5f5f5; font-size: 20px;  padding: 40px; text-align: justify;">Traveling to the Visayas region in the Philippines is a captivating journey filled with picturesque landscapes, vibrant cultural heritage, and warm hospitality. As you venture into this enchanting archipelago, you'll find yourself surrounded by pristine white-sand beaches, crystal-clear turquoise waters, and breathtaking coral reefs that make the region a paradise for snorkeling and diving enthusiasts. From the iconic Chocolate Hills in Bohol to the stunning island-hopping adventures in Palawan, each destination offers its own unique charm and unforgettable experiences. Whether you're exploring the vibrant cities or unwinding in the serene countryside, a journey through the Visayas promises to be an extraordinary and soul-stirring adventure.</p>
+        <div class="main">
+            <div class="row1">
+                 <div class="wrapper">
+                <div class="card">
+                  <img src="https://www.naturalis-expeditions.com/wp-content/uploads/2016/07/Boracay-Island-White-Beach-Philippines-1024x637.jpg">
+                  <div class="info">
+                    <h1>Boracay Island</h1>
+                    <p>Philippine: Aklan</p>
+                  </div>
+                </div>
+             
+                <br>
+                <br>
+                <div class="wrapper1">
+                  <div class="card">
+                    <img src="https://2.bp.blogspot.com/-NE7XHW1fIYM/UCDgCKZ8SxI/AAAAAAAABrI/lVbO8w36EOM/s1600/boracay+resorts.jpg">
+                    <div class="info">
+                      <h1>Boracay Island</h1>
+                      <p>Philippine: Aklan</p>
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <img src="https://th.bing.com/th/id/R.c5089ecb83222848c4e7bd4e325cbf73?rik=mvCRuoIwppOv%2fA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-wEoKhODUIMc%2fVFl2t999-_I%2fAAAAAAAACv4%2fpt-2-4lP6oY%2fs1600%2fboracay_beach_5.jpg&ehk=88momS40XD33tH9ciX8SLhnuZmqAIgqTo02c1fKgFNY%3d&risl=&pid=ImgRaw&r=0">
+                    <div class="info">
+                        <h1>Boracay Island</h1>
+                        <p>Philippine: Aklan</p>
+                      </div>
+                    </div>
+          
+                    <div class="card">
+                      <img src="https://th.bing.com/th/id/OIP.mNz8lx12R7B9wDTrAG5-AAHaFk?w=227&h=180&c=7&r=0&o=5&pid=1.7">
+                      <div class="info">
+                        <h1>Boracay Island</h1>
+                      <p>Philippine: Aklan</p>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                <h1>Cambugahay Falls</h1>
+                <p>Cambugahay Falls is a breathtaking natural wonder located in the municipality of Siquijor in the Philippines. It is one of the most popular tourist destinations on the island, renowned for its enchanting beauty and serene atmosphere. The falls can be found in the midst of a lush forest, surrounded by towering trees and vibrant vegetation.</p>
+  
+                <p> Cambugahay Falls is composed of multiple tiers, creating a cascading effect as the water flows down from one level to another. The falls consist of three main levels, each offering a unique and picturesque setting. To reach the falls, visitors need to descend a flight of stone steps, adding a touch of adventure to the experience.</p>
+                  
+                <p>The crystal-clear water of Cambugahay Falls is inviting and refreshing, making it a perfect spot for swimming, especially during the hot summer months. The cool, pristine waters are known for their rejuvenating qualities, providing a welcome respite from the tropical heat. Many visitors also enjoy diving into the natural pools from the various levels of the falls, creating a thrilling and memorable experience.</p>
+                
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <div class="card">
+                    <img src="https://i0.wp.com/unusualplaces.org/wp-content/uploads/2019/05/chocolatehills2.jpg">
+                    <div class="info">
+                      <h1>Chocolate Hills</h1>
+                      <p>Philippine: Bohol</p>
+                    </div>
+                  </div>
+        
+                  <br>
+                  <br>
+                  <div class="wrapper1">
+                    <div class="card">
+                      <img src="https://i1.wp.com/unusualplaces.org/wp-content/uploads/2019/05/hills.jpg?w=1920&ssl=1">
+                      <div class="info">
+                        <h1>Chocolate Hills</h1>
+                        <p>Philippine: Bohol</p>
+                      </div>
+                    </div>
+          
+                    <div class="card">
+                      <img src="https://th.bing.com/th/id/OIP.Ie6zdx8x-KMpHlOybKvCEwHaFj?pid=ImgDet&w=520&h=390&rs=1">
+                      <div class="info">
+                        <h1>Chocolate Hills</h1>
+                        <p>Philippine: Bohol</p>
+                      </div>
+                    </div>
+          
+                    <div class="card">
+                      <img src="https://a.cdn-hotels.com/gdcs/production86/d1393/066c104b-e8c0-4364-b281-69bc7bd970d3.jpg">
+                      <div class="info">
+                       <h1>Chocolate Hills</h1>
+                      <p>Philippine: Bohol</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <h1>Hinagdanan Cave</h1>
+                  <p>Hinagdanan Cave is a captivating natural wonder located in the municipality of Dauis, on Panglao Island in the Philippines. This enchanting cave has gained popularity among tourists for its unique geological formations and underground beauty. Upon entering Hinagdanan Cave, visitors are greeted by a surreal sight. The cave is adorned with stunning stalactites hanging from the ceiling and stalagmites rising from the cave floor, creating a breathtaking natural spectacle. The formations have been shaped over centuries by the continuous dripping of water, leaving behind intricate patterns and textures that captivate the imagination. One of the most mesmerizing features of Hinagdanan Cave is its underground lagoon. Crystal-clear turquoise waters fill the cavern, creating a surreal atmosphere. Visitors can take a refreshing dip in the cool waters or simply marvel at the natural beauty that surrounds them.</p>
+ 
+                <p> Exploring Hinagdanan Cave offers a unique adventure to nature enthusiasts and cave explorers. Guided tours are available to ensure the safety of visitors and provide insights into the cave's geological and historical significance. The cave holds an air of mystery and tranquility, offering a serene escape from the outside world. For those seeking an extraordinary experience amidst nature's wonders, Hinagdanan Cave is a must-visit destination that promises to leave a lasting impression.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+ 
+                <div class="card">
+                  <img src="https://i.pinimg.com/736x/88/6a/be/886abec2e279d57f1576f9024f72c52c.jpg">
+                  <div class="info">
+                    <h1>Kalanggaman Island</h1>
+                    <p>Philippine: Leyte</p>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <div class="wrapper1">
+                  <div class="card">
+                    <img src="https://i2.wp.com/www.awanderfulsole.com/wp-content/uploads/2017/08/DSC_0368.jpg?fit=1800%2C1200&ssl=1">
+                    <div class="info">
+                      <h1>Kalanggaman Island</h1>
+                      <p>Philippine: Leyte</p>
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <img src="https://tourism.biliranisland.com/wp-content/uploads/2017/08/Kalanggaman-Island-1.jpg">
+                    <div class="info">
+                      <h1>Kalanggaman Island</h1>
+                      <p>Philippine: Leyte</p>
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <img src="https://i.redd.it/lbcmurq6pzv01.jpg">
+                    <div class="info">
+                      <h1>Kalanggaman Island</h1>
+                    <p>Philippine: Leyte</p>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <h1>Kawasan Falls</h1>
+               
+                <p>Kawasan Falls is a captivating natural attraction situated in the municipality of Badian, in the province of Cebu, Philippines. Known for its stunning turquoise blue waters and lush surroundings, Kawasan Falls is a must-visit destination for nature lovers and adventure seekers alike.</p>
+ 
+                  <p> The falls consist of a series of cascades formed by the Matutinao River, with the main waterfall standing at approximately 40 meters in height. As the water rushes down the rocks, it creates a mesmerizing display of power and beauty. The vibrant blue color of the water is a result of the limestone rock formations in the area, which lend a unique charm to the falls.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h2 style="color: #f5f5f5;">Discover More:</h2>
+                <br>
+                <br>
+                <br>
+              <div class="iba">
+                <div class="card2">
+                  <img src="https://preview.redd.it/s1guz02t3foz.jpg?auto=webp&s=dd63f9ed9b1a30f341d612f239a271d62b199087">
+                  <div class="info">
+                    <h1>Luzon</h1>
+                    <p>Philippines</p>
+                    <a href="luzon.html" class="button">Read More</a>
+                  </div>
+                </div>
+              
+ 
+                <div class="card2">
+                  <img src="https://media.istockphoto.com/photos/tropical-guyam-island-with-traditional-fishing-boats-siargao-picture-id860794652?k=6&m=860794652&s=170667a&w=0&h=HMqUpBQ_gPPNGU_qEokTRJVmoyS1jMfFMHOyTeAFTjk=">
+                  <div class="info">
+                    <h1>Mindanao</h1>
+                    <p>Philippines</p>
+                    <a href="mindanao.html" class="button">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+ 
+            </div>
+            <div class="row2"> <div class="wrapper">
+              <br>
+              <br>
+              <br>
+            
+                <h1>Boracay Island</h1>
+             <p>Boracay Island is a popular tourist destination located in the Western Visayas region of the Philippines. It is known for its stunning white sandy beaches, crystal-clear waters, and vibrant nightlife. Boracay is situated approximately 315 kilometers south of Manila, the capital of the Philippines.</p>
+ 
+             <p>The island is famous for its main beach, White Beach, which stretches for about four kilometers and is divided into three stations. Station 1 is known for its upscale resorts and restaurants, Station 2 is the bustling central area with shops, bars, and entertainment venues, while Station 3 offers a more relaxed and quieter atmosphere.</p>
+                
+             <p> Boracay offers a wide range of water activities and sports such as snorkeling, scuba diving, kiteboarding, parasailing, and jet skiing. The island is also renowned for its stunning sunsets, and many visitors gather on the beach to witness the breathtaking views.</p>
+             <br>
+             <br>
+             <br>
+             <br>
+                <br>
+                <br>
+                <br>
+                <br>  
+                <div class="card">
+                  <img src="https://i.pinimg.com/originals/91/06/27/910627401a48390740ed60bc3a4b1c80.jpg">
+                  <div class="info">
+                    <h1>Cambugahay Falls</h1>
+                    <p>Philippine: Siquijor</p>
+                  </div>
+                </div>
+      
+                <br>
+                <br>
+                <div class="wrapper1">
+                  <div class="card">
+                    <img src="https://cdn.audleytravel.com/-/-/79/1029007-cambugahay-falls-siquijor.jpg">
+                    <div class="info">
+                      <h1>Cambugahay Falls</h1>
+                      <p>Philippine: Siquijor</p>
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <img src="https://preview.redd.it/240drh300jg31.jpg?auto=webp&s=48468dca705affc1133a37e623a4613eceff142c">
+                    <div class="info">
+                      <h1>Cambugahay Falls</h1>
+                      <p>Philippine: Siquijor</p>
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/cambugahay-falls-lazi-siquijor-island-philippines-cavan-images.jpg">
+                    <div class="info">
+                      <h1>Cambugahay Falls</h1>
+                      <p>Philippine: Siquijor</p>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <h1>Chocolate Hills</h1>
+                <p>The Chocolate Hills are a natural wonder located in the Bohol province of the Philippines. This unique geological formation consists of more than 1,200 perfectly symmetrical, dome-shaped hills spread across an area of about 50 square kilometers. The name "Chocolate Hills" comes from their appearance during the dry season when the grass covering the hills turns brown, resembling a sea of chocolate kisses.</p>
+ 
+                <p>These hills, which vary in size from 30 to 50 meters in height, are a breathtaking sight to behold. The lush green vegetation that covers the hills in the wet season contrasts beautifully with the chocolate-brown hue they acquire in the dry season, creating a stunning landscape.</p>
+                  
+                <p> The Chocolate Hills have become one of the most famous tourist destinations in the Philippines, attracting visitors from all over the world. Many viewing decks and observation points have been built to provide visitors with panoramic views of this extraordinary landscape. The best time to visit is during the dry season, from December to May, when the hills display their characteristic chocolate-brown color. Exploring the Chocolate Hills is a remarkable experience, allowing visitors to appreciate the wonders of nature and marvel at the sheer beauty and mystery of these remarkable geological formations.</p>
+            
+            
+              <br>
+              <br>
+                <div class="card">
+                  <img src="https://preview.redd.it/f82j7sfk5dz11.jpg?auto=webp&s=412798607a0ec728e5d57338dc3f9e0afe32ad9d">
+                  <div class="info">
+                    <h1>Hinagdanan Cave</h1>
+                    <p>Philippine: Bohol</p>
+                  </div>
+                </div>
+      
+                <br>
+                <br>
+                <div class="wrapper1">
+                  <div class="card">
+                    <img src="https://fastly.4sqi.net/img/general/600x600/48382350_DLEIL8ke6522O5omEKLrFozT_J2l9yAwC1yFgc6Mo7E.jpg">
+                    <div class="info">
+                      <h1>Hinagdanan Cave</h1>
+                      <p>Philippine: Bohol</p>
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <img src="https://www.jonnymelon.com/wp-content/uploads/2019/09/hinagdanan-cave-3.jpg">
+                    <div class="info">
+                      <h1>Hinagdanan Cave</h1>
+                      <p>Philippine: Bohol</p>
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <img src="https://gttp.imgix.net/376930/x/0/add-hinagdanan-cave-to-your-next-bohol-visit-3.jpg?ar=1.91%3A1&w=1200&fit=crop">
+                    <div class="info">
+                      <h1>Hinagdanan Cave</h1>
+                      <p>Philippine: Bohol</p>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1>Kalanggaman Island</h1>
+               <p>Kalanggaman Island is a pristine tropical paradise located in the Visayan Sea, off the coast of Palompon in Leyte, Philippines. This small, but incredibly beautiful island has become a popular destination for travelers seeking idyllic beaches and crystal-clear waters. Kalanggaman Island is renowned for its long stretch of powdery white sand that extends into a mesmerizing sandbar on one side, offering a postcard-perfect view.</p>
+               <p> The island's clear turquoise waters are teeming with vibrant marine life, making it a paradise for snorkelers and divers. Snorkeling enthusiasts can explore the colorful coral reefs surrounding the island, marveling at the kaleidoscope of tropical fish and other underwater wonders. The calm and shallow waters also make it an ideal spot for swimming and relaxing, allowing visitors to unwind in the tranquility of this hidden gem.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                 <div class="card">
+                  <img src="https://i.redd.it/48r12mubppk01.jpg">
+                  <div class="info">
+                    <h1>Kawasan Falls</h1>
+                    <p>Philippine: Cebu</p>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="wrapper1">
+                  <div class="card">
+                    <img src="https://gttp.imgix.net/195229/x/0/kawasan-falls-from-second-level-1.jpg">
+                    <div class="info">
+                      <h1>Kawasan Falls</h1>
+                      <p>Philippine: Cebu</p>
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <img src="https://gttp.imgix.net/195228/x/0/kawasan-falls-cebu-day-tour-with-molave-milk-station-side-trip.jpg">
+                    <div class="info">
+                      <h1>Kawasan Falls</h1>
+                      <p>Philippine: Cebu</p>
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <img src="https://sugbo.ph/wp-content/uploads/2020/06/Kawasan-Falls-Cebu-The-Island-Nomad-11.jpg">
+                    <div class="info">
+                      <h1>Kawasan Falls</h1>
+                      <p>Philippine: Cebu</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
